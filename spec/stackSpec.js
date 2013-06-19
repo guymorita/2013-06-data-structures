@@ -22,8 +22,8 @@ describe("stack", function() {
   });
 
   it('should add pushed items to the top of the stack', function() {
-    // Fill out the body of the test here
   });
+
 
   it('should remove popped items from the top of the stack', function() {
     // Fill out the body of the test here
@@ -36,6 +36,28 @@ describe("stack", function() {
   it('should not error when popping from an empty stack', function() {
     // Fill out the body of the test here
   });
+
+  it('should be size zero when stack is empty', function() {
+    expect(stack.size()).to.equal(0);
+  });
+
+  it('should increment size by one when pushing', function() {
+    stack.push('bob');
+    expect(stack.size()).to.equal(1);
+  });
+
+  it('should decrement size by one when popping', function() {
+    stack.push('bill');
+    stack.push('greg');
+    stack.pop();
+    expect(stack.size()).to.equal(1);
+  });
+  it('should be size zero after excessive popping', function() {
+    stack.pop();
+    expect(stack.size()).to.equal(0);
+  });
+
+
 
   // Hey! Add more tests here if you can think of ways to test your stack more thoroughly
 });
